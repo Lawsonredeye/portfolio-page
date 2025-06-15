@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lawson Omoregbee</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="script.js" defer></script>
+    <style>
+        body {
+            font-family: 'Red Hat Display', sans-serif;
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#262223',
+                        secondary: '#ddc6b6',
+                    },
+                    fontFamily: {
+                        redhat: ['Red Hat Display', 'sans-serif'],
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.5s ease-out',
+                        'fade-in': 'fadeIn 0.5s ease-out',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' }
+                        },
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        [data-aos] {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        [data-aos].aos-animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .dark body {
+            background-color: #1a1a1a;
+            color: #ffffff;
+        }
+    </style>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+<body class="bg-secondary/10 dark:bg-gray-900 transition-colors duration-300">
+    <!-- Navigation -->
+    <nav class="bg-white/90 dark:bg-gray-800/90 backdrop-blur-md shadow-lg fixed w-full z-10 transition-all duration-300">
+        <div class="container mx-auto px-6 py-5">
+            <div class="flex items-center justify-between">
+                <div class="text-2xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary dark:from-secondary dark:to-white transition-all duration-300 hover:scale-105 transform cursor-pointer">
+                    Lawson Redeye
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="font-medium text-primary dark:text-secondary hover:text-secondary relative group transition-all duration-300">
+                        Home
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-secondary transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="#about" class="font-medium text-primary dark:text-secondary hover:text-secondary relative group transition-all duration-300">
+                        About
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-secondary transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="#skills" class="font-medium text-primary dark:text-secondary hover:text-secondary relative group transition-all duration-300">
+                        Skills
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-secondary transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="#experience" class="font-medium text-primary dark:text-secondary hover:text-secondary relative group transition-all duration-300">
+                        Experience
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-secondary transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="#contact" class="font-medium text-primary dark:text-secondary hover:text-secondary relative group transition-all duration-300">
+                        Contact
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-secondary transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button id="dark-mode-toggle" class="p-2.5 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-all duration-300 hover:scale-105 transform">
+                        <i class="fas fa-moon text-primary dark:text-secondary text-xl"></i>
+                    </button>
+                    <button class="md:hidden focus:outline-none transform hover:scale-105 transition-all duration-300" id="menu-button">
+                    <i class="fas fa-bars text-primary dark:text-secondary text-xl"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div class="md:hidden hidden" id="mobile-menu">
+            <div class="px-4 py-4 space-y-3 bg-white/90 dark:bg-gray-800/90 backdrop-blur-md">
+                <a href="#home" class="block text-primary dark:text-secondary hover:text-secondary transition-all duration-300 font-medium pl-2 border-l-2 border-transparent hover:border-secondary">Home</a>
+                <a href="#about" class="block text-primary dark:text-secondary hover:text-secondary transition-all duration-300 font-medium pl-2 border-l-2 border-transparent hover:border-secondary">About</a>
+                <a href="#skills" class="block text-primary dark:text-secondary hover:text-secondary transition-all duration-300 font-medium pl-2 border-l-2 border-transparent hover:border-secondary">Skills</a>
+                <a href="#experience" class="block text-primary dark:text-secondary hover:text-secondary transition-all duration-300 font-medium pl-2 border-l-2 border-transparent hover:border-secondary">Experience</a>
+                <a href="#contact" class="block text-primary dark:text-secondary hover:text-secondary transition-all duration-300 font-medium pl-2 border-l-2 border-transparent hover:border-secondary">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-20 min-h-screen flex items-center bg-gradient-to-br from-secondary/20 to-white dark:from-gray-800 dark:to-gray-900 transition-colors duration-300">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2" data-aos="fade-up" data-aos-delay="100">
+                    <h1 class="text-5xl md:text-7xl font-bold text-primary dark:text-white mb-6 leading-tight">Backend Engineer</h1>
+                    <p class="text-xl md:text-2xl text-primary/80 dark:text-gray-300 mb-10">Crafting robust and scalable server solutions</p>
+                    <a href="#contact" class="bg-primary dark:bg-secondary text-white dark:text-primary px-8 py-4 rounded-lg hover:bg-secondary dark:hover:bg-white hover:text-primary transition-all duration-300 text-lg transform hover:scale-105">Let's Connect</a>
+                </div>
+                <div class="md:w-1/2 mt-8 md:mt-0" data-aos="fade-left" data-aos-delay="200">
+                    <div class="relative group">
+                        <div class="absolute -inset-1 bg-gradient-to-r from-primary to-secondary rounded-lg blur opacity-25 group-hover:opacity-50 transition duration-300"></div>
+                        <div class="relative">
+                            <img src="https://illustrations.popsy.co/amber/home-office.svg" alt="3D Developer Illustration" class="rounded-lg w-full hover:transform hover:scale-105 transition-transform duration-300 dark:opacity-90 dark:filter dark:brightness-110">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center text-primary dark:text-white mb-12" data-aos="fade-up">About Me</h2>
+            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8 transition-colors duration-300" data-aos="fade-up" data-aos-delay="200">
+                <p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
+                    With 2 years of experience in backend development, I specialize in building scalable and efficient server-side applications. My passion lies in creating robust systems that can handle complex business logic while maintaining high performance and reliability.
+                </p>
+                <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+                    I thrive in collaborative environments and enjoy solving challenging problems. My experience with various databases and system architectures allows me to choose the right tools for each unique project requirement.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-primary/5 dark:bg-gray-800/50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center text-primary dark:text-white mb-16" data-aos="fade-up">Technical Skills</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 hover:shadow-xl transition duration-300" data-aos="fade-up" data-aos-delay="100">
+                    <h3 class="text-xl font-semibold mb-4 text-primary dark:text-white">Programming Languages</h3>
+                    <div class="space-y-2">
+                        <div class="flex items-center">
+                            <i class="fab fa-golang text-blue-500 dark:text-blue-400 mr-2"></i>
+                            <span class="text-gray-700 dark:text-gray-300">Go</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fab fa-python text-yellow-500 dark:text-yellow-400 mr-2"></i>
+                            <span class="text-gray-700 dark:text-gray-300">Python</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fab fa-node-js text-green-500 dark:text-green-400 mr-2"></i>
+                            <span class="text-gray-700 dark:text-gray-300">Node.js</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 hover:shadow-xl transition duration-300">
+                    <h3 class="text-xl font-semibold mb-4 text-primary dark:text-white">Databases</h3>
+                    <div class="space-y-2">
+                        <div class="flex items-center">
+                            <i class="fas fa-database text-blue-500 dark:text-blue-400 mr-2"></i>
+                            <span class="text-gray-700 dark:text-gray-300">MySQL</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-database text-blue-600 dark:text-blue-500 mr-2"></i>
+                            <span class="text-gray-700 dark:text-gray-300">PostgreSQL</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-database text-red-500 dark:text-red-400 mr-2"></i>
+                            <span class="text-gray-700 dark:text-gray-300">Redis</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-database text-green-500 dark:text-green-400 mr-2"></i>
+                            <span class="text-gray-700 dark:text-gray-300">MongoDB</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 hover:shadow-xl transition duration-300">
+                    <h3 class="text-xl font-semibold mb-4 text-primary dark:text-white">Infrastructure</h3>
+                    <div class="space-y-2">
+                        <div class="flex items-center">
+                            <i class="fab fa-linux text-black dark:text-white mr-2"></i>
+                            <span class="text-gray-700 dark:text-gray-300">Linux/Ubuntu</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-server text-gray-600 dark:text-gray-400 mr-2"></i>
+                            <span class="text-gray-700 dark:text-gray-300">Server Management</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center text-primary dark:text-white mb-12" data-aos="fade-up">Experience</h2>
+            <div class="space-y-8">
+                <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 transition-colors duration-300" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                        <h3 class="text-xl font-semibold text-primary dark:text-white">Backend Engineer</h3>
+                        <span class="text-gray-600 dark:text-gray-400">2023 - Present</span>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+                        Developed and maintained scalable microservices using Go and Node.js. Implemented efficient database solutions using PostgreSQL and MongoDB. Optimized application performance using Redis caching.
+                    </p>
+                </div>
+                <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 transition-colors duration-300" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                        <h3 class="text-xl font-semibold text-primary dark:text-white">Junior Backend Developer</h3>
+                        <span class="text-gray-600 dark:text-gray-400">2021 - 2023</span>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+                        Started my journey in backend development. Worked with Express.js and MySQL to build RESTful APIs. Gained experience in Linux server administration and deployment processes.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section id="contact" class="py-20 bg-primary dark:bg-gray-900">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-4xl font-bold text-secondary mb-8" data-aos="fade-up">Let's Build Something Amazing Together</h2>
+            <p class="text-xl md:text-2xl text-secondary/90 mb-12 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+                I'm always excited to tackle new challenges and create impactful solutions. Whether you need a robust backend system or want to discuss potential collaboration, I'm here to help turn your ideas into reality.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6" data-aos="fade-up" data-aos-delay="200">
+                <a href="mailto:omoregbeeolawson@gmail.com" 
+                   class="w-full sm:w-auto bg-secondary dark:bg-secondary/90 text-primary px-8 py-4 rounded-lg hover:bg-white dark:hover:bg-white transition-all duration-300 transform hover:scale-105 text-lg font-medium">
+                    <i class="fas fa-envelope mr-2"></i>Email Me
+                </a>
+                <a href="https://www.linkedin.com/in/lawson-omoregbee" 
+                   target="_blank" 
+                   class="w-full sm:w-auto bg-[#0077b5] text-white px-8 py-4 rounded-lg hover:bg-[#0077b5]/80 transition-all duration-300 transform hover:scale-105 text-lg font-medium">
+                    <i class="fab fa-linkedin mr-2"></i>Connect on LinkedIn
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary dark:bg-gray-900 text-white py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-secondary/90">&copy; 2025 Lawson Redeye. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
